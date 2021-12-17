@@ -1,0 +1,53 @@
+﻿Uppgift 4 Frågor - Mattias
+
+
+1: En Stack är en rad kod som håller koll på ordningen koden är strukturerad. Visuellt så kan man beskriva en stack
+som ett par lådor som står på varandra. Man går igenom den första innan man kan gå igenom de andra. Den kan hantera minneslagring själv.
+
+Exempel
+
+public int TimesThree(int times)
+{
+	int result;
+	result = times * 3;
+	return result;
+}
+
+Vi har en int "times" som sedan multipliceras med 3.
+
+
+En heap däremot beskrivs oftast som en hög med rena kläder. Man tar ett objekt därifrån utan att bry sig om vad som ligger överst.
+
+Reference typer kommer alltid hamna i heapen, men kan bli kallad till Stacken via en Pointer, en sak som låter
+dig peka på reference types.
+
+Exemple
+
+public class MyValue
+{
+	public int MyPoints;
+}
+
+public int TimesThree(int times)
+{
+	int result = new MyValue();
+	result.MyPoints = times * 3;
+	return result;
+}
+
+MyPoints är en Reference typ som blir kallad till Stacken. Eftersom en pointer pekar på ett objekt i Heapen så kommer result i nuläger returnera null, tills MyPoints får ett värde.
+
+
+
+2: En Reference Type går alltid till Heapen, medans Value types lagras där man declarar Value types.
+
+En Value type är saker man oftast brukar se i strukturer som int, doubles och floats. Value types är variabler
+som lagrar insat data. En reference type lagrar referencer i sig.
+
+
+
+3:
+I första exemplet så blir result 3 för att inget i kodraden säger att x ska ändras.
+
+I den andra så kallas en reference type till i Stacken. I exemeplet så kallas MyInt, som ligger i Heapen, till Stacken. Eftersom två Value types pekar
+på samma reference, så kommer den reference typen få det värdet som sist declarade den. I det här fallet: 4.
